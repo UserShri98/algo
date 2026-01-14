@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:2000/api";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export async function getDashboardSummary() {
   const res = await fetch(`${BASE_URL}/dashboard/summary`);
