@@ -7,8 +7,16 @@ from routes.brokers import brokers_bp
 from routes.strategies import strategies_bp
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
-
+CORS(
+    app,
+    resources={
+        r"/api/*": {
+            "origins": [
+                "https://algo-kappa-flax.vercel.app"
+            ]
+        }
+    }
+)
 # ✅ Root route (fixes 404)
 @app.route("/")
 def home():
